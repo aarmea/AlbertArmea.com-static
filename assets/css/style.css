@@ -75,6 +75,7 @@ body {
   height: 80px;
   margin-top: 0;
   font-size: 120px;
+  color: #000;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
   background-color: transparent;
   border: 0;
@@ -107,7 +108,7 @@ body {
 .carousel-caption .lead {
   margin: 0;
   line-height: 1.25;
-  color: #fff;
+  color: #000;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 .carousel-caption .btn {

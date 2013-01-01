@@ -66,12 +66,19 @@
     </div>
 
     <!-- Carousel -->
-    <div id="myCarousel" class="carousel slide">
+    <div id="coverCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active" style="background-image: url('assets/img/front.jpg')">
-          <!-- <img> carousels don't center properly - don't put one here -->
+          <div class="container">
+            <div class="carousel-caption">
+              <!-- front cover photo, text intentionally blank -->
+              <!-- <img> carousels don't center properly - don't put one here -->
+            </div>
+          </div>
         </div>
       </div>
+      <a class="left carousel-control" href="#coverCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#coverCarousel" data-slide="next">&rsaquo;</a>
     </div>
 
     <!-- All remaining page content -->
@@ -91,8 +98,7 @@
     <script>
       !function ($) {
         $(function(){
-          // carousel demo
-          $('#myCarousel').carousel()
+          $('#coverCarousel').carousel()
         })
       }(window.jQuery)
     </script>
