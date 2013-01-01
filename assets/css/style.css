@@ -81,7 +81,8 @@ body {
 }
 
 .carousel .item {
-  height: 500px;
+  height: 300px;
+  padding-top: 200px; /* Total height 500px */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,7 +101,7 @@ body {
   position: static;
   max-width: 550px;
   padding: 0 20px;
-  margin-top: 200px;
+  margin-top: 0; /* Margin set by parent's padding-top */
 }
 .carousel-caption h1,
 .carousel-caption .lead {
@@ -178,7 +179,8 @@ body {
   }
 
   .carousel .item {
-    height: 500px;
+    height: 300px;
+    padding-top: 200px; /* Total height 500px */
   }
   .carousel img {
     width: auto;
@@ -213,7 +215,8 @@ body {
 
   }
   .carousel .item {
-    height: 300px;
+    height: 200px;
+    padding-top: 100px; /* Total height 300px */
   }
   .carousel img {
     /*height: 300px;*/
@@ -221,7 +224,7 @@ body {
   .carousel-caption {
     width: 65%;
     padding: 0 70px;
-    margin-top: 100px;
+    margin-top: 0; /* Margin set by parent's padding-top */
   }
   .carousel-caption h1 {
     font-size: 30px;
