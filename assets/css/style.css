@@ -188,7 +188,7 @@ body {
   .featurette-image.pull-right {
     display: block;
     float: none;
-    max-width: 80%;
+    max-width: 512px;
     margin: 0 auto 20px;
   }
 }
@@ -233,6 +233,10 @@ body {
   .featurette .lead {
     font-size: 18px;
     line-height: 1.5;
+  }
+  .featurette-image.pull-left,
+  .featurette-image.pull-right {
+    max-width: 60%;
   }
 
 }
