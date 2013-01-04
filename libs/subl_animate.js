@@ -1,10 +1,10 @@
-// The Sublime anim_encoder; https://github.com/sublimehq/anim_encoder
+// Based on the Sublime anim_encoder; https://github.com/sublimehq/anim_encoder
 // Documented at http://www.sublimetext.com/~jps/animated_gifs_the_hard_way.html
 
 var delay_scale = 0.7
 var timer = null
 
-var animate = function(img, timeline, element)
+var animate = function(img, timeline, element, text_timeline, text_element)
 {
   var i = 0
 
@@ -17,6 +17,7 @@ var animate = function(img, timeline, element)
     var frame = i++ % timeline.length
     var delay = timeline[frame].delay * delay_scale
     var blits = timeline[frame].blit
+    var text = text_timeline[timeline[frame].text]
 
     var ctx = element.getContext('2d')
 
@@ -32,6 +33,11 @@ var animate = function(img, timeline, element)
       ctx.drawImage(img, sx, sy, w, h, dx, dy, w, h)
     }
 
+    if (text_element != null)
+    {
+      text_element.innerHTML = text
+    }
+
     timer = window.setTimeout(f, delay)
   }
 
@@ -39,7 +45,7 @@ var animate = function(img, timeline, element)
   f()
 }
 
-var animate_fallback = function(img, timeline, element)
+var animate_fallback = function(img, timeline, element, text_timeline, text_element)
 {
   var i = 0
 
@@ -58,6 +64,7 @@ var animate_fallback = function(img, timeline, element)
     var frame = i++ % timeline.length
     var delay = timeline[frame].delay * delay_scale
     var blits = timeline[frame].blit
+    var text = text_timeline[timeline[frame].text]
 
     for (j = 0; j < blits.length; ++j)
     {
@@ -81,6 +88,11 @@ var animate_fallback = function(img, timeline, element)
       element.appendChild(d)
     }
 
+    if (text_element != null)
+    {
+      text_element.innerHTML = text
+    }
+
     timer = window.setTimeout(f, delay)
   }
 
@@ -88,16 +100,22 @@ var animate_fallback = function(img, timeline, element)
   f()
 }
 
-function set_animation(img_url, timeline, canvas_id, fallback_id)
+function set_animation2(img_url, timeline, canvas_id, fallback_id, text_timeline, text_id)
 {
   var img = new Image()
   img.onload = function()
   {
     var canvas = document.getElementById(canvas_id)
+    var text_element = document.getElementById(text_id)
     if (canvas && canvas.getContext)
-      animate(img, timeline, canvas)
+      animate(img, timeline, canvas, text_timeline, text_element)
     else
-      animate_fallback(img, timeline, document.getElementById(fallback_id))
+      animate_fallback(img, timeline, document.getElementById(fallback_id), text_timeline, text_element)
   }
   img.src = img_url
+}
+
+function set_animation(img_url, timeline, canvas_id, fallback_id)
+{
+  set_animation2(img_url, timeline, canvas_id, fallback_id, null, null)
 }

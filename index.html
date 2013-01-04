@@ -133,7 +133,7 @@
             <div id="WindowGroomer_fallback" class="anim_target" style="width: 512px; height: 384px; position: relative;"></div>
           </canvas>
           <!-- Tutorial in sync with animation -->
-          <p>Some dynamic text here</p>
+          <p id="WindowGroomer_synctext">Loading animation</p>
         </div>
         <!-- Headers -->
         <h2 class="featurette-heading">WindowGroomer. <span class="muted">Clean up unruly window layouts.</span></h2>
@@ -166,7 +166,7 @@
       }(window.jQuery)
 
       // WindowGroomer animation
-      set_animation("assets/anim/WindowGroomer_packed.png", WindowGroomer_timeline, 'WindowGroomer_target', 'WindowGroomer_fallback');
+      set_animation2("assets/anim/WindowGroomer_packed.png", WindowGroomer_timeline, 'WindowGroomer_target', 'WindowGroomer_fallback', WindowGroomer_text, 'WindowGroomer_synctext');
     </script>
   </body>
 </html>
