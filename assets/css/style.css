@@ -179,6 +179,12 @@ body {
 /* Featurettes
 ------------------------- */
 
+.featurette-begin {
+  text-align: center;
+  font-weight: normal;
+  font-size: 64px;
+  padding-top: 160px;
+}
 .featurette-divider {
   margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
