@@ -2,3 +2,6 @@
 .DS_Store
 Thumbs.db
 
+# Sublime Text workspace
+*.sublime-workspace
+
